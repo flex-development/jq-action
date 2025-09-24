@@ -74,6 +74,13 @@ jobs:
           data: <<<$(echo '{"c":3,"b":2,"a":1}')
           filter: .
           options: --indent 0 --sort-keys
+      - id: test7
+        name: Test 7
+        uses: ./
+        with:
+          data: <<<$(echo '["hello, world"]')
+          filter: .[0]
+          raw: false
       - id: outputs
         name: Outputs
         run: |
@@ -84,3 +91,4 @@ jobs:
           echo steps.test4.outputs.result: ${{ steps.test4.outputs.result }}
           echo steps.test5.outputs.result: ${{ steps.test5.outputs.result }}
           echo steps.test6.outputs.result: ${{ steps.test6.outputs.result }}
+          echo steps.test7.outputs.result: ${{ steps.test7.outputs.result }}

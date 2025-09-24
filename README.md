@@ -17,6 +17,7 @@ A [`jq`][jq] utility for GitHub Actions
   - [`data`](#data)
   - [`filter`](#filter)
   - [`options`](#options)
+  - [`raw`](#raw)
 - [Outputs](#outputs)
   - [`result`](#result)
 - [Contribute](#contribute)
@@ -75,10 +76,16 @@ For more advanced filters, see <https://jqlang.github.io/jq/manual>.
 
 ### `options`
 
-The command options to apply.
+The command options to apply (optional).
 
-The raw output option, `-r`, will be prepended. With this option, if the result of the [`filter`](#filter) is a string,
-it will be written directly to standard output rather than being formatted as a JSON string with escapes and quotes.
+### `raw`
+
+> **default**: `true`
+
+Shortcut for the raw output option, `-r`.
+
+With this option, if the [`result`](#result) of the [`filter`](#filter) is a string, it will not be formatted as JSON
+string with escapes and quotes.
 
 ## Outputs
 
