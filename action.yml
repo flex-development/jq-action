@@ -33,8 +33,14 @@ runs:
       run: |
         set -e
 
+        # init command options.
+        opts=-r
+
+        # append options.
+        [[ -n '${{ inputs.options }}' ]] && opts="$opts ${{ inputs.options }}"
+
         # run command and capture result.
-        result="$(jq -r ${{ inputs.options }} ${{ inputs.filter }} ${{ inputs.data }})"
+        result="$(jq $opts ${{ inputs.filter }} ${{ inputs.data }})"
 
         # set output.
         echo "result=\"$result\"" >>$GITHUB_OUTPUT

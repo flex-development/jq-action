@@ -67,6 +67,13 @@ jobs:
           data: |
             <<<$(echo '{ "zero": 0 }')
           filter: .zero
+      - id: test6
+        name: Test 6
+        uses: ./
+        with:
+          data: <<<$(echo '{"c":3,"b":2,"a":1}')
+          filter: .
+          options: --indent 0 --sort-keys
       - id: outputs
         name: Outputs
         run: |
@@ -76,3 +83,4 @@ jobs:
           echo steps.test3.outputs.result: ${{ steps.test3.outputs.result }}
           echo steps.test4.outputs.result: ${{ steps.test4.outputs.result }}
           echo steps.test5.outputs.result: ${{ steps.test5.outputs.result }}
+          echo steps.test6.outputs.result: ${{ steps.test6.outputs.result }}
