@@ -38,9 +38,41 @@ jobs:
           ref: ${{ github.head_ref || github.ref }}
       - id: test1
         name: Test 1
-        run: echo "test 1"
+        uses: ./
+        with:
+          data: package.json
+          filter: .version
+      - id: test2
+        name: Test 2
+        uses: ./
+        with:
+          data: grease.config.json
+          filter: .tag.sign
+      - id: test3
+        name: Test 3
+        uses: ./
+        with:
+          data: .dprint.jsonc
+          filter: .exec.commands[1].command
+      - id: test4
+        name: Test 4
+        uses: ./
+        with:
+          data: <<<$(echo [])
+          filter: .
+      - id: test5
+        name: Test 5
+        uses: ./
+        with:
+          data: |
+            <<<$(echo '{ "zero": 0 }')
+          filter: .zero
       - id: outputs
         name: Outputs
         run: |
           echo outputs
           echo steps.test1.outputs.result: ${{ steps.test1.outputs.result }}
+          echo steps.test2.outputs.result: ${{ steps.test2.outputs.result }}
+          echo steps.test3.outputs.result: ${{ steps.test3.outputs.result }}
+          echo steps.test4.outputs.result: ${{ steps.test4.outputs.result }}
+          echo steps.test5.outputs.result: ${{ steps.test5.outputs.result }}

@@ -16,8 +16,10 @@ inputs:
     required: true
   options:
     description: |
-      the command options to apply.
-      the raw output option, `-r`, will be prepended. with this option, if the `filter`'s result is a string then it will be written directly to standard output, rather than being formatted as a JSON string with escapes and quotes
+      the options to apply to the filter.
+      the raw output option, `-r`, will be prepended. with this option, if the result of the filter
+      is a string, it will be written directly to standard output rather than being formatted as a
+      JSON string with escapes and quotes
     required: false
 outputs:
   result:
@@ -30,7 +32,12 @@ runs:
       shell: bash
       run: |
         set -e
-        # jq -r [options] <filter> <data>
+
+        # run command and capture result.
+        result="$(jq -r ${{ inputs.options }} ${{ inputs.filter }} ${{ inputs.data }})"
+
+        # set output.
+        echo "result=\"$result\"" >>$GITHUB_OUTPUT
 branding:
   color: blue
   icon: search

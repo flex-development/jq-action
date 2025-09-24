@@ -46,8 +46,8 @@ For more advanced filters, see <https://jqlang.github.io/jq/manual>.
 
 The command options to apply.
 
-The raw output option, `-r`, will be prepended. With this option, if the [`filter`](#filter)'s result is a string then
-it will be written directly to standard output, rather than being formatted as a JSON string with escapes and quotes.
+The raw output option, `-r`, will be prepended. With this option, if result of the [`filter`](#filter) is a string, it
+will be written directly to standard output rather than being formatted as a JSON string with escapes and quotes.
 
 ## Outputs
 
