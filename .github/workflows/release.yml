@@ -68,7 +68,10 @@ jobs:
         uses: flex-development/manver-action@1.0.1
       - id: tag-prefix
         name: Get release tag prefix
-        run: echo "result=$(jq .tagprefix grease.config.json -r)" >>$GITHUB_OUTPUT
+        uses: ./
+        with:
+          data: grease.config.json
+          filter: .tagprefix
       - id: tag
         name: Get release tag
         run: |

@@ -160,7 +160,10 @@ jobs:
           path: ${{ env.CACHE_PATH }}
       - id: version
         name: Get dprint version
-        run: echo "result=$(jq .devDependencies.dprint package.json -r)" >>$GITHUB_OUTPUT
+        uses: ./
+        with:
+          data: package.json
+          filter: .devDependencies.dprint
       - id: check
         name: Check formatting
         uses: dprint/check@v2.3
