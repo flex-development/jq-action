@@ -148,11 +148,11 @@ repository:
   automated_security_fixes: true
   default_branch: main
   delete_branch_on_merge: true
-  description: Execute JSON queries in GitHub Actions
+  description: A jq utility for GitHub Actions
   has_issues: true
   has_projects: true
   has_wiki: false
-  homepage: https://github.com/flex-development/jq-action
+  homepage: https://github.com/marketplace/actions/jq-action
   is_template: false
   private: false
   squash_merge_commit_message: BLANK

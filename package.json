@@ -1,6 +1,6 @@
 {
   "name": "@flex-development/jq-action",
-  "description": "Execute JSON queries in GitHub Actions",
+  "description": "A jq utility for GitHub Actions",
   "version": "0.0.0",
   "keywords": [
     "actions",

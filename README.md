@@ -27,7 +27,38 @@ This is a simple, but useful action for executing JSON queries with [`jq`][jq].
 
 ## Use
 
-**TODO**: use
+```yaml
+---
+name: format
+on:
+  - pull_request
+  - push
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout ${{ github.head_ref || github.ref_name }}
+        uses: actions/checkout@v5.0.0
+        with:
+          persist-credentials: false
+          ref: ${{ github.head_ref || github.ref }}
+      - id: version
+        name: Get dprint version
+        uses: flex-development/jq-action@1.0.0
+        with:
+          data: package.json
+          filter: .devDependencies.dprint
+      - id: check
+        name: Check formatting
+        uses: dprint/check@v2.3
+        with:
+          args: --config-discovery=false --incremental=false --log-level=info
+          config-path: .dprint.jsonc
+          dprint-version: ${{ steps.version.outputs.result }}
+```
+
+> See [`.github/workflows/test.yml`](.github/workflows/test.yml) for more usage examples.
 
 ## Inputs
 

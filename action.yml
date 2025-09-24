@@ -4,7 +4,7 @@
 ---
 name: jq-action
 author: '@flex-development'
-description: Execute JSON queries in GitHub Actions
+description: A jq utility for GitHub Actions
 inputs:
   data:
     description: the data to operate on
