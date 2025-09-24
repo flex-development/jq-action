@@ -40,7 +40,7 @@ runs:
         [[ -n '${{ inputs.options }}' ]] && opts="$opts ${{ inputs.options }}"
 
         #  run command and set output.
-        echo result=\"$(jq $opts ${{ inputs.filter }} ${{ inputs.data }})\" >>$GITHUB_OUTPUT
+        echo result=$(jq $opts ${{ inputs.filter }} ${{ inputs.data }}) >>$GITHUB_OUTPUT
 branding:
   color: blue
   icon: search
