@@ -7,7 +7,7 @@
 [![conventional commits](https://img.shields.io/badge/-conventional%20commits-fe5196?logo=conventional-commits\&logoColor=ffffff)](https://conventionalcommits.org)
 [![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat\&logo=yarn\&logoColor=ffffff)](https://yarnpkg.com)
 
-Execute JSON queries in GitHub Actions
+A [`jq`][jq] utility for GitHub Actions
 
 ## Contents
 
@@ -23,7 +23,7 @@ Execute JSON queries in GitHub Actions
 
 ## What is this?
 
-**TODO**: what is this?
+This is a simple, but useful action for executing JSON queries with [`jq`][jq].
 
 ## Use
 
@@ -46,14 +46,14 @@ For more advanced filters, see <https://jqlang.github.io/jq/manual>.
 
 The command options to apply.
 
-The raw output option, `-r`, will be prepended. With this option, if result of the [`filter`](#filter) is a string, it
-will be written directly to standard output rather than being formatted as a JSON string with escapes and quotes.
+The raw output option, `-r`, will be prepended. With this option, if the result of the [`filter`](#filter) is a string,
+it will be written directly to standard output rather than being formatted as a JSON string with escapes and quotes.
 
 ## Outputs
 
 ### `result`
 
-The result of the operation.
+The result of the [`filter`](#filter).
 
 ## Contribute
 
@@ -61,3 +61,5 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 This project has a [code of conduct](./CODE_OF_CONDUCT.md). By interacting with this repository, organization, or
 community you agree to abide by its terms.
+
+[jq]: https://jqlang.github.io/jq
