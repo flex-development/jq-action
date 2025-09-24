@@ -2,7 +2,7 @@
 # https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions
 
 ---
-name: jq
+name: jq-action
 author: '@flex-development'
 description: Execute JSON queries in GitHub Actions
 inputs:
