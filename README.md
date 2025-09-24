@@ -20,6 +20,7 @@ A [`jq`][jq] utility for GitHub Actions
   - [`raw`](#raw)
 - [Outputs](#outputs)
   - [`result`](#result)
+- [Related](#related)
 - [Contribute](#contribute)
 
 ## What is this?
@@ -84,7 +85,7 @@ The command options to apply (optional).
 
 Shortcut for the raw output option, `-r`.
 
-With this option, if the [`result`](#result) of the [`filter`](#filter) is a string, it will not be formatted as JSON
+With this option, if the [`result`](#result) of the [`filter`](#filter) is a string, it will not be formatted as a JSON
 string with escapes and quotes.
 
 ## Outputs
@@ -92,6 +93,10 @@ string with escapes and quotes.
 ### `result`
 
 The result of the [`filter`](#filter).
+
+## Related
+
+- [`flex-development/manver-action`][manver-action] — version metadata extraction utility
 
 ## Contribute
 
@@ -101,3 +106,5 @@ This project has a [code of conduct](./CODE_OF_CONDUCT.md). By interacting with 
 community you agree to abide by its terms.
 
 [jq]: https://jqlang.github.io/jq
+
+[manver-action]: https://github.com/flex-development/manver-action

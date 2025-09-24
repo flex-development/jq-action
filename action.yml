@@ -21,7 +21,7 @@ inputs:
     default: true
     description: |
       shortcut for the raw output option, `-r`. with this option, if the result of the filter
-      is a string, it will not be formatted as JSON string with escapes and quotes
+      is a string, it will not be formatted as a JSON string with escapes and quotes
     required: false
 outputs:
   result:
