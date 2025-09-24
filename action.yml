@@ -1,0 +1,36 @@
+# ACTION METADATA
+# https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions
+
+---
+name: jq
+author: '@flex-development'
+description: Execute JSON queries in GitHub Actions
+inputs:
+  data:
+    description: the data to operate on
+    required: true
+  filter:
+    description: |
+      the filter to apply.
+      the simplest filter is `.`, which copies jq's input to its output unmodified (except for formatting). for more advanced filters, see https://jqlang.github.io/jq/manual
+    required: true
+  options:
+    description: |
+      the command options to apply.
+      the raw output option, `-r`, will be prepended. with this option, if the `filter`'s result is a string then it will be written directly to standard output, rather than being formatted as a JSON string with escapes and quotes
+    required: false
+outputs:
+  result:
+    description: the result of the filter
+    value: ${{ steps.jq.outputs.result }}
+runs:
+  using: composite
+  steps:
+    - id: jq
+      shell: bash
+      run: |
+        set -e
+        # jq -r [options] <filter> <data>
+branding:
+  color: search
+  icon: link
