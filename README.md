@@ -23,7 +23,7 @@ A [`jq`][jq] utility for GitHub Actions
 
 ## What is this?
 
-This is a simple, but useful action for executing JSON queries with [`jq`][jq].
+This is a simple, but useful, action for executing JSON queries with [`jq`][jq].
 
 ## Use
 
