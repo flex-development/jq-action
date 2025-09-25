@@ -1,4 +1,4 @@
-# jq
+# jq-action
 
 [![github release](https://img.shields.io/github/v/release/flex-development/jq-action.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/jq-action/releases/latest)
 [![test](https://github.com/flex-development/jq-action/actions/workflows/test.yml/badge.svg)](https://github.com/flex-development/jq-action/actions/workflows/test.yml)
